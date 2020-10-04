@@ -1,0 +1,11 @@
+name: BasicPlaySoundTester
+version: ${project.version}
+main: cz.devfire.playsoundtester.Loader
+api-version: 1.13
+authors: [Firestone82]
+description: Plugin for testing any sound in minecraft
+commands:
+  playsoundtester:
+    aliases: [pst]
+
+
