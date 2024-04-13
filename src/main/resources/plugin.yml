@@ -1,11 +1,9 @@
-name: BasicPlaySoundTester
+name: SoundTestMenu
 version: ${project.version}
-main: cz.devfire.playsoundtester.Loader
-api-version: 1.13
-authors: [Firestone82]
-description: Plugin for testing any sound in minecraft
+main: com.marotheit.soundtestmenu.Loader
+api-version: 1.20
+authors: [Firestone82, Marotheit]
+description: A sound test menu plugin, useful for easily testing in-game sounds.
 commands:
-  playsoundtester:
-    aliases: [pst]
-
-
+  soundtestmenu:
+    aliases: [stm]

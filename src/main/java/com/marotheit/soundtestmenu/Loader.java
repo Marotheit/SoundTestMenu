@@ -1,8 +1,8 @@
-package cz.devfire.playsoundtester;
+package com.marotheit.soundtestmenu;
 
-import cz.devfire.playsoundtester.Core.pCommand;
-import cz.devfire.playsoundtester.Core.pHandler;
-import cz.devfire.playsoundtester.Core.pListener;
+import com.marotheit.soundtestmenu.Core.pCommand;
+import com.marotheit.soundtestmenu.Core.pHandler;
+import com.marotheit.soundtestmenu.Core.pListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,7 +14,7 @@ public final class Loader extends JavaPlugin {
         plugin = this;
 
         pHandler.init();
-        Bukkit.getPluginCommand("playsoundtester").setExecutor(new pCommand());
+        Bukkit.getPluginCommand("soundtestmenu").setExecutor(new pCommand());
         Bukkit.getPluginManager().registerEvents(new pListener(), this);
     }
 

@@ -1,4 +1,4 @@
-package cz.devfire.playsoundtester.Other;
+package com.marotheit.soundtestmenu.Other;
 
 import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
@@ -58,8 +58,9 @@ public class Utils {
         SkullMeta meta = (SkullMeta) head.getItemMeta();
         GameProfile profile = new GameProfile(UUID.randomUUID(), "");
         profile.getProperties().put("textures", new Property("textures", value));
-        Field profileField = null;
+        Field profileField;
         try {
+            assert meta != null;
             profileField = meta.getClass().getDeclaredField("profile");
             profileField.setAccessible(true);
             profileField.set(meta, profile);
