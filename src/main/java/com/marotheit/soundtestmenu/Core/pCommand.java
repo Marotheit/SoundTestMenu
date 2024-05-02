@@ -5,19 +5,14 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class pCommand implements CommandExecutor {
-
+public class pCommand implements CommandExecutor{
+    
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String s, String[] strings) {
         if (!sender.hasPermission("soundtest.menu")) {
             sender.sendMessage(Utils.cc("&7[&3SoundTestMenu&7] &cYou do not have permission to perform this command."));
-            return true;
         } else {
-            if (Utils.getServerVersion().contains("v1_8")) {
-                pHandler.openSound((Player) sender, "ALL");
-            } else {
-                pHandler.openMain((Player) sender);
-            }
-            return true;
+            pHandler.openMain((Player) sender);
         }
+        return true;
     }
 }
