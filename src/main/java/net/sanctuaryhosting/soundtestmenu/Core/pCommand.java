@@ -1,6 +1,6 @@
-package com.marotheit.soundtestmenu.Core;
+package net.sanctuaryhosting.soundtestmenu.Core;
 
-import com.marotheit.soundtestmenu.Other.Utils;
+import net.sanctuaryhosting.soundtestmenu.Other.Utils;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

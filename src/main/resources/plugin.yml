@@ -1,6 +1,6 @@
 name: SoundTestMenu
 version: ${project.version}
-main: com.marotheit.soundtestmenu.Loader
+main: net.sanctuaryhosting.soundtestmenu.Loader
 api-version: 1.20
 authors: [Firestone82, Marotheit]
 description: A sound test menu plugin, useful for easily testing in-game sounds.

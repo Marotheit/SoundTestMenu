@@ -1,8 +1,8 @@
-package com.marotheit.soundtestmenu;
+package net.sanctuaryhosting.soundtestmenu;
 
-import com.marotheit.soundtestmenu.Core.pCommand;
-import com.marotheit.soundtestmenu.Core.pHandler;
-import com.marotheit.soundtestmenu.Core.pListener;
+import net.sanctuaryhosting.soundtestmenu.Core.pCommand;
+import net.sanctuaryhosting.soundtestmenu.Core.pHandler;
+import net.sanctuaryhosting.soundtestmenu.Core.pListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 

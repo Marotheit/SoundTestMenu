@@ -1,4 +1,4 @@
-package com.marotheit.soundtestmenu.Other;
+package net.sanctuaryhosting.soundtestmenu.Other;
 
 import com.google.common.collect.Lists;
 import org.bukkit.Bukkit;

@@ -1,9 +1,9 @@
-package com.marotheit.soundtestmenu.Core;
+package net.sanctuaryhosting.soundtestmenu.Core;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.marotheit.soundtestmenu.Other.Utils;
-import com.marotheit.soundtestmenu.Other.XMaterial;
+import net.sanctuaryhosting.soundtestmenu.Other.Utils;
+import net.sanctuaryhosting.soundtestmenu.Other.XMaterial;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
