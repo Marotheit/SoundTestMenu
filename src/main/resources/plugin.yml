@@ -1,9 +1,9 @@
 name: SoundTestMenu
-version: ${project.version}
-main: net.sanctuaryhosting.soundtestmenu.Loader
-api-version: 1.20
-authors: [Firestone82, Marotheit]
+version: '1.21.1'
+main: net.sanctuaryhosting.soundTestMenu.SoundTestMenuPlugin
 description: A sound test menu plugin, useful for easily testing in-game sounds.
+authors: [Firestone82, Marotheit]
+api-version: '1.21.1'
 commands:
   soundtestmenu:
     aliases: [stm]

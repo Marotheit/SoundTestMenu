@@ -1,13 +1,13 @@
-package net.sanctuaryhosting.soundtestmenu;
+package net.sanctuaryhosting.soundTestMenu;
 
-import net.sanctuaryhosting.soundtestmenu.Core.pCommand;
-import net.sanctuaryhosting.soundtestmenu.Core.pHandler;
-import net.sanctuaryhosting.soundtestmenu.Core.pListener;
+import net.sanctuaryhosting.soundTestMenu.Core.pCommand;
+import net.sanctuaryhosting.soundTestMenu.Core.pHandler;
+import net.sanctuaryhosting.soundTestMenu.Core.pListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Loader extends JavaPlugin{
-    public static Loader plugin;
+public final class SoundTestMenuPlugin extends JavaPlugin{
+    public static SoundTestMenuPlugin plugin;
     
     @Override
     public void onEnable() {

@@ -1,10 +1,9 @@
-package net.sanctuaryhosting.soundtestmenu.Other;
+package net.sanctuaryhosting.soundTestMenu.Other;
 
 import com.google.common.collect.Lists;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
-
 import java.util.List;
 import java.util.UUID;
 

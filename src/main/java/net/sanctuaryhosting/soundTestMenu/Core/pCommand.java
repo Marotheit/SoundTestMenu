@@ -1,6 +1,6 @@
-package net.sanctuaryhosting.soundtestmenu.Core;
+package net.sanctuaryhosting.soundTestMenu.Core;
 
-import net.sanctuaryhosting.soundtestmenu.Other.Utils;
+import net.sanctuaryhosting.soundTestMenu.Other.Utils;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

@@ -1,7 +1,7 @@
-package net.sanctuaryhosting.soundtestmenu.Core;
+package net.sanctuaryhosting.soundTestMenu.Core;
 
-import net.sanctuaryhosting.soundtestmenu.Other.Utils;
-import net.sanctuaryhosting.soundtestmenu.Other.XMaterial;
+import net.sanctuaryhosting.soundTestMenu.Other.Utils;
+import net.sanctuaryhosting.soundTestMenu.Other.XMaterial;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;

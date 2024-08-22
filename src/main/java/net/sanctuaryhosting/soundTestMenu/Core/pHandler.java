@@ -1,16 +1,15 @@
-package net.sanctuaryhosting.soundtestmenu.Core;
+package net.sanctuaryhosting.soundTestMenu.Core;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import net.sanctuaryhosting.soundtestmenu.Other.Utils;
-import net.sanctuaryhosting.soundtestmenu.Other.XMaterial;
+import net.sanctuaryhosting.soundTestMenu.Other.Utils;
+import net.sanctuaryhosting.soundTestMenu.Other.XMaterial;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
 import java.util.*;
 
 public class pHandler{
