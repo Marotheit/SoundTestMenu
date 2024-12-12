@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import net.sanctuaryhosting.soundTestMenu.Other.Utils;
 import net.sanctuaryhosting.soundTestMenu.Other.XMaterial;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -20,28 +21,31 @@ public class pHandler{
     
     public static void init() {
         Inventory inv;
+        assert XMaterial.MUSIC_DISC_OTHERSIDE.parseMaterial() != null;
         ItemStack disc = new ItemStack(XMaterial.MUSIC_DISC_OTHERSIDE.parseMaterial());
         ItemMeta discMeta = disc.getItemMeta();
+        assert XMaterial.MUSIC_DISC_5.parseMaterial() != null;
         ItemStack allsoundsdisc = new ItemStack(XMaterial.MUSIC_DISC_5.parseMaterial());
         ItemMeta allsoundsdiscMeta = allsoundsdisc.getItemMeta();
-        ItemStack blank = new ItemStack(XMaterial.GRAY_STAINED_GLASS_PANE.parseMaterial(), 1, (short) 15);
+        assert XMaterial.GRAY_STAINED_GLASS_PANE.parseMaterial() != null;
+        ItemStack blank = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
         ItemMeta blankMeta = blank.getItemMeta();
         int suma = 0;
         
         // List
         categories.put("ALL", Lists.newArrayList());
         for (Sound sound : sounds) {
-            String[] s = sound.name().split("_");
+            String[] s = sound.toString().split("_");
             
             if (s.length != 1) {
                 if (!categories.containsKey(s[0])) {
                     categories.put(s[0], Lists.newArrayList());
                 }
                 
-                categories.get(s[0]).add(sound.name());
+                categories.get(s[0]).add(sound.toString());
             }
             
-            categories.get("ALL").add(sound.name());
+            categories.get("ALL").add(sound.toString());
         }
         
         // Categories menu

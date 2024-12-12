@@ -1,4 +1,5 @@
 # SoundTestMenu
+![GitHub Latest Release](https://img.shields.io/github/v/release/Marotheit/SoundTestMenu)
 ### A sound test menu plugin, useful for easily testing in-game sounds.
 This project would not be possible without [Firestone82](https://github.com/Firestone82/PlaySoundTester). He did all the heavy lifting, I have simply updated the plugin for my personal needs.
 

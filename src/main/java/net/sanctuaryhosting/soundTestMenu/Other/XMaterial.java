@@ -1,7 +1,6 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 Hex_27
  * Copyright (c) 2024 Crypto Morin
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,9 +30,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SpawnEggMeta;
 import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -1592,6 +1591,51 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
     WEATHERED_CUT_COPPER,
     WEATHERED_CUT_COPPER_SLAB,
     WEATHERED_CUT_COPPER_STAIRS,
+    PALE_OAK_PLANKS,
+    PALE_OAK_SAPLING,
+    PALE_OAK_LOG,
+    STRIPPED_PALE_OAK_LOG,
+    STRIPPED_PALE_OAK_WOOD,
+    PALE_OAK_WOOD,
+    PALE_OAK_LEAVES,
+    PALE_MOSS_CARPET,
+    PALE_HANGING_MOSS,
+    PALE_MOSS_BLOCK,
+    PALE_OAK_SLAB,
+    CREAKING_HEART,
+    PALE_OAK_FENCE,
+    PALE_OAK_STAIRS,
+    PALE_OAK_BUTTON,
+    PALE_OAK_PRESSURE_PLATE,
+    PALE_OAK_DOOR,
+    PALE_OAK_TRAPDOOR,
+    PALE_OAK_FENCE_GATE,
+    PALE_OAK_BOAT,
+    PALE_OAK_CHEST_BOAT,
+    PALE_OAK_SIGN,
+    PALE_OAK_HANGING_SIGN,
+    WHITE_BUNDLE,
+    ORANGE_BUNDLE,
+    MAGENTA_BUNDLE,
+    LIGHT_BLUE_BUNDLE,
+    YELLOW_BUNDLE,
+    LIME_BUNDLE,
+    PINK_BUNDLE,
+    GRAY_BUNDLE,
+    LIGHT_GRAY_BUNDLE,
+    CYAN_BUNDLE,
+    PURPLE_BUNDLE,
+    BLUE_BUNDLE,
+    BROWN_BUNDLE,
+    GREEN_BUNDLE,
+    RED_BUNDLE,
+    BLACK_BUNDLE,
+    CREAKING_SPAWN_EGG,
+    FIELD_MASONED_BANNER_PATTERN,
+    BORDURE_INDENTED_BANNER_PATTERN,
+    PALE_OAK_WALL_SIGN,
+    PALE_OAK_WALL_HANGING_SIGN,
+    POTTED_PALE_OAK_SAPLING,
     WEEPING_VINES,
     WEEPING_VINES_PLANT,
     WET_SPONGE(1, "SPONGE"),
@@ -1658,7 +1702,20 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
     ZOMBIE_SPAWN_EGG(54, "MONSTER_EGG"),
     ZOMBIE_VILLAGER_SPAWN_EGG(27, "MONSTER_EGG"),
     ZOMBIE_WALL_HEAD(2, "SKULL", "SKULL_ITEM"),
-    ZOMBIFIED_PIGLIN_SPAWN_EGG(57, "MONSTER_EGG", "ZOMBIE_PIGMAN_SPAWN_EGG");
+    ZOMBIFIED_PIGLIN_SPAWN_EGG(57, "MONSTER_EGG", "ZOMBIE_PIGMAN_SPAWN_EGG"),
+    PEN_EYEBLOSSOM,
+    CLOSED_EYEBLOSSOM,
+    RESIN_CLUMP,
+    RESIN_BLOCK,
+    RESIN_BRICKS,
+    RESIN_BRICK_STAIRS,
+    RESIN_BRICK_SLAB,
+    RESIN_BRICK_WALL,
+    CHISELED_RESIN_BRICKS,
+    RESIN_BRICK,
+    POTTED_OPEN_EYEBLOSSOM,
+    POTTED_CLOSED_EYEBLOSSOM,
+    OPEN_EYEBLOSSOM;
 
 
     /**
@@ -1750,7 +1807,7 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      *
      * @see #getLegacy()
      */
-    @Nonnull
+    @NotNull
     private final String[] legacy;
     /**
      * The cached Bukkit parsed material.
@@ -1761,7 +1818,7 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
     @Nullable
     private final Material material;
 
-    XMaterial(int data, @Nonnull String... legacy) {
+    XMaterial(int data, @NotNull String... legacy) {
         this.data = (byte) data;
         this.legacy = legacy;
 
@@ -1787,8 +1844,8 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @return an optional that can be empty.
      * @since 5.1.0
      */
-    @Nonnull
-    private static Optional<XMaterial> getIfPresent(@Nonnull String name) {
+    @NotNull
+    private static Optional<XMaterial> getIfPresent(@NotNull String name) {
         return Optional.ofNullable(NAMES.get(name));
     }
 
@@ -1811,7 +1868,7 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @since 1.0.0
      */
     @Nullable
-    private static XMaterial requestOldXMaterial(@Nonnull String name, byte data) {
+    private static XMaterial requestOldXMaterial(@NotNull String name, byte data) {
         String holder = name + data;
         XMaterial cache = NAME_CACHE.getIfPresent(holder);
         if (cache != null) return cache;
@@ -1843,8 +1900,8 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @see #matchXMaterial(String)
      * @since 3.0.0
      */
-    @Nonnull
-    private static Optional<XMaterial> matchXMaterialWithData(@Nonnull String name) {
+    @NotNull
+    private static Optional<XMaterial> matchXMaterialWithData(@NotNull String name) {
         int index = name.indexOf(':');
         if (index != -1) {
             String mat = format(name.substring(0, index));
@@ -1868,8 +1925,8 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @see #matchDefinedXMaterial(String, byte)
      * @since 2.0.0
      */
-    @Nonnull
-    public static Optional<XMaterial> matchXMaterial(@Nonnull String name) {
+    @NotNull
+    public static Optional<XMaterial> matchXMaterial(@NotNull String name) {
         if (name == null || name.isEmpty())
             throw new IllegalArgumentException("Cannot match a material with null or empty material name");
         Optional<XMaterial> oldMatch = matchXMaterialWithData(name);
@@ -1884,8 +1941,8 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @see #matchXMaterial(ItemStack)
      * @since 2.0.0
      */
-    @Nonnull
-    public static XMaterial matchXMaterial(@Nonnull Material material) {
+    @NotNull
+    public static XMaterial matchXMaterial(@NotNull Material material) {
         Objects.requireNonNull(material, "Cannot match null material");
         return matchDefinedXMaterial(material.name(), UNKNOWN_DATA_VALUE)
                 .orElseThrow(() -> new IllegalArgumentException("Unsupported material with no data value: " + material.name()));
@@ -1901,9 +1958,9 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @see #matchXMaterial(Material)
      * @since 2.0.0
      */
-    @Nonnull
+    @NotNull
     @SuppressWarnings("deprecation")
-    public static XMaterial matchXMaterial(@Nonnull ItemStack item) {
+    public static XMaterial matchXMaterial(@NotNull ItemStack item) {
         Objects.requireNonNull(item, "Cannot match null ItemStack");
         String material = item.getType().name();
 
@@ -1913,13 +1970,13 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
         byte data = (byte) (Data.ISFLAT || material.equals("MAP") || item.getType().getMaxDurability() > 0 ? 0 : item.getDurability());
 
         // Versions 1.9-1.12 didn't really use the items data value.
-        if (supports(9) && !supports(13) && item.hasItemMeta() && material.equals("MONSTER_EGG")) {
-            ItemMeta meta = item.getItemMeta();
-            if (meta instanceof SpawnEggMeta) {
-                SpawnEggMeta egg = (SpawnEggMeta) meta;
-                material = egg.getSpawnedType().name() + "_SPAWN_EGG";
-            }
-        }
+        //if (supports(9) && !supports(13) && item.hasItemMeta() && material.equals("MONSTER_EGG")) {
+        //    ItemMeta meta = item.getItemMeta();
+        //    if (meta instanceof SpawnEggMeta) {
+        //        SpawnEggMeta egg = (SpawnEggMeta) meta;
+        //        material = egg.getSpawnedType().name() + "_SPAWN_EGG";
+        //    }
+        //}
 
         // Potions used the items data value to store
         // information about the type of potion in 1.8
@@ -1966,8 +2023,8 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @since 3.0.0
      */
     @SuppressWarnings({"DanglingJavadoc", "JavadocBlankLines"})
-    @Nonnull
-    protected static Optional<XMaterial> matchDefinedXMaterial(@Nonnull String name, byte data) {
+    @NotNull
+    protected static Optional<XMaterial> matchDefinedXMaterial(@NotNull String name, byte data) {
         // if (!Boolean.valueOf(Boolean.getBoolean(Boolean.TRUE.toString())).equals(Boolean.FALSE.booleanValue())) return null;
         Boolean duplicated = null;
         boolean isAMap = name.equalsIgnoreCase("MAP");
@@ -2017,8 +2074,8 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @return an enum name.
      * @since 2.0.0
      */
-    @Nonnull
-    protected static String format(@Nonnull String name) {
+    @NotNull
+    protected static String format(@NotNull String name) {
         int len = name.length();
         char[] chs = new char[len];
         int count = 0;
@@ -2074,9 +2131,9 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @see #parseItem()
      * @since 3.0.0
      */
-    @Nonnull
+    @NotNull
     @SuppressWarnings("deprecation")
-    public ItemStack setType(@Nonnull ItemStack item) {
+    public ItemStack setType(@NotNull ItemStack item) {
         Objects.requireNonNull(item, "Cannot set material for null ItemStack");
         Material material = this.parseMaterial();
         Objects.requireNonNull(material, () -> "Unsupported material: " + this.name());
@@ -2098,7 +2155,7 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @return true if it's one of the legacy names, otherwise false.
      * @since 2.0.0
      */
-    private boolean anyMatchLegacy(@Nonnull String name) {
+    private boolean anyMatchLegacy(@NotNull String name) {
         for (int i = this.legacy.length - 1; i >= 0; i--) {
             if (name.equals(this.legacy[i])) return true;
         }
@@ -2120,10 +2177,10 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @since 3.0.0
      */
     @Override
-    @Nonnull
+    @NotNull
     public String toString() {
         return Arrays.stream(name().split("_"))
-                .map(t -> t.charAt(0) + t.substring(1).toLowerCase())
+                .map(t -> t.charAt(0) + t.substring(1).toLowerCase(Locale.ENGLISH))
                 .collect(Collectors.joining(" "));
     }
 
@@ -2203,7 +2260,7 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @since 1.0.0
      */
     @SuppressWarnings("deprecation")
-    public boolean isSimilar(@Nonnull ItemStack item) {
+    public boolean isSimilar(@NotNull ItemStack item) {
         Objects.requireNonNull(item, "Cannot compare with null ItemStack");
         if (item.getType() != this.parseMaterial()) return false;
         // Special case for splash potions.
@@ -2253,7 +2310,7 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
      * @return true if there's a duplicated material for this material, otherwise false.
      * @since 2.0.0
      */
-    private static boolean isDuplicated(@Nonnull String name) {
+    private static boolean isDuplicated(@NotNull String name) {
         // Don't use matchXMaterial() since this method is being called from matchXMaterial() itself and will cause a StackOverflowError.
         return DUPLICATED.contains(name);
     }
@@ -2314,11 +2371,18 @@ public enum XMaterial /* implements com.cryptomorin.xseries.abstractions.Materia
         private static final int VERSION;
 
         static { // This needs to be right below VERSION because of initialization order.
-            String version = Bukkit.getVersion();
-            Matcher matcher = Pattern.compile("MC: \\d\\.(\\d+)").matcher(version);
+            // Null-checked for unit tests that don't run a server.
+            // noinspection ConstantValue
+            if (Bukkit.getServer() == null) {
+                System.err.println("Bukkit.getServer() in null. This should not happen when running a plugin normally");
+                VERSION = 21;
+            } else {
+                String version = Bukkit.getVersion();
+                Matcher matcher = Pattern.compile("MC: \\d\\.(\\d+)").matcher(version);
 
-            if (matcher.find()) VERSION = Integer.parseInt(matcher.group(1));
-            else throw new IllegalArgumentException("Failed to parse server version from: " + version);
+                if (matcher.find()) VERSION = Integer.parseInt(matcher.group(1));
+                else throw new IllegalArgumentException("Failed to parse server version from: " + version);
+            }
         }
 
         /**
